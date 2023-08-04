@@ -1,0 +1,282 @@
+html {
+  box-sizing: border-box;
+  background-color: white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* шрифты */
+
+@font-face {
+  font-family: 'Roboto';
+  src: local("RobotoRegular"),
+    url("../fonts/RobotoRegular.woff2") format("woff2"),
+    url("../fonts/RobotoRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local("RobotoBold"),
+    url("../fonts/RobotoBold.woff2") format("woff2"),
+    url("../fonts/RobotoBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* root */
+
+:root {
+  --color-white: #ffffff;
+  --color-Skarlet: #fc2847;
+}
+
+
+/* glob */
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+  margin-top: 0;
+  margin: 0;
+}
+
+
+.header {
+  /* background-color: black; */
+  background: #3352cc;
+  animation: color 30s infinite linear;
+  padding: 40px 0 20px 0;
+}
+
+@keyframes color {
+  0% {
+    background: #07b6b6;
+  }
+
+  20% {
+    background: #706edf;
+  }
+
+  40% {
+    background: #1fe65e;
+  }
+
+  60% {
+    background: #e21dd1;
+  }
+
+  80% {
+    background: #058973;
+  }
+
+  100% {
+    background: #07b6b6;
+  }
+}
+
+.h1 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.header-span {
+  color: var(--color-white);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* main-container */
+.main-container {
+
+  max-width: 1200px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
+}
+
+.main {
+  box-shadow: 0px 5px 10px -5px rgba(3, 129, 226, 0.67) inset;
+  background-color: white;
+  padding: 20px 0 20px 0;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  margin-bottom: 20px;
+}
+
+
+.inp-task {
+  outline: none;
+  padding-left: 10px;
+  border-radius: 10px 0 0 10px;
+  border-color: darkblue;
+}
+
+.task-btn {
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  border-radius: 0 10px 10px 0;
+  background-color: purple;
+  color: white;
+}
+
+.list-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.list-item-content {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 90px 1fr 90px 90px;
+  border-radius: 10px;
+  padding: 10px;
+  background: lavender;
+  transition: all 0.3s ease-in-out;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.done-btn {
+  font-size: 16px;
+  border-radius: 10px 0 0 10px;
+  color: var(--color-white);
+  padding: 5px;
+  background-color: green;
+}
+
+.edit-btn {
+  font-size: 16px;
+  color: var(--color-white);
+  padding: 5px;
+  background-color: #5f78da;
+}
+
+.delete-btn {
+  font-size: 16px;
+  border-radius: 0 10px 10px 0;
+  color: var(--color-white);
+  padding: 5px;
+  background-color: var(--color-Skarlet);
+}
+
+.number-task {
+  font-size: 16px;
+  color: darkblue;
+}
+
+.task-span {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+
+.list-item-content-done {
+  background-color: #1fe65e;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 576px) {
+
+  .task-btn {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .task-btn:hover {
+    background-color: rgb(160, 71, 160);
+  }
+
+  .task-btn:active {
+    background-color: rgb(90, 6, 90);
+  }
+
+  .done-btn {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .done-btn:hover {
+    background-color: rgb(65, 168, 65);
+  }
+
+  .done-btn:active {
+    background-color: rgb(13, 110, 13);
+  }
+
+  .delete-btn {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .delete-btn:hover {
+    background-color: rgb(187, 92, 92);
+  }
+
+  .delete-btn:active {
+    background-color: red;
+  }
+
+  .inp-task {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .inp-task:hover {
+    background-color: rgb(249, 203, 249);
+  }
+
+  .list-item-content:hover {
+    transform: scale(1.02);
+  }
+}
